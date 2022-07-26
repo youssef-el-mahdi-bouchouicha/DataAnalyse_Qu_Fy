@@ -16,7 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-sns.set_theme(style="darkgrid")
+#sns.set_theme(style="darkgrid")
 
 """# 1- Récuperation du Data   :
 
@@ -145,8 +145,7 @@ g = sns.catplot(
 plt.yticks([2,1],['Tres Perturbant','Perturbant'])
 
 g.despine(left=True)
-g.set_axis_labels("", "Body mass (g)")
-g.legend.set_title("")
+g.set_axis_labels("impact sur la circulation", "niveau de perturbation")
 
 df_copy.describe()
 
@@ -159,7 +158,6 @@ df_copy['objet'].unique()
 df_copy['objet'].describe()
 
 plt.figure(figsize=(20,10))
-sns.set_theme(style="darkgrid")
 sns.countplot(x="impact_circulation", hue="objet" ,data=df_copy )
 plt.show()
 
