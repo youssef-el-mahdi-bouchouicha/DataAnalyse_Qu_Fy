@@ -60,7 +60,7 @@ def Set_items_In_DB ():
         for item in list:
             chantier=(item.get("objet"),item.get("description"),item.get("typologie"),item.get("niveau_perturbation"),item.get("impact_circulation"))
             filtredlist.append(chantier)
-
+        
         for item in filtredlist:
             print(item)
             cursor.execute(sql,item)
