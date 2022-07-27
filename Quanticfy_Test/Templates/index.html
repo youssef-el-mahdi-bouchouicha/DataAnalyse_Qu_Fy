@@ -209,7 +209,7 @@
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                         <li class="nav-item menu-open">
-                            <a href="index2 " class="nav-link active">
+                            <a href="{% url 'index' %} " class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -451,24 +451,16 @@
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard : Data Analyse</h1>
-                            <h3>
-                                {% block messages %} {% if messages %}
-                                <div class="container" style="color: firebrick; margin-top: 20px">
-                                    {% for message in messages %} {{ message }} {% endfor %}
-                                </div>
-                                {% endif %} {% endblock %}
-                            </h3>
-                        </div>
-                        <!-- /.col -->
-                        <div class="col-sm-6">
+                    <div class="row mb-12">
+                        <div class="col-sm-12" style="text-align: center">
+                            <h1 style="font-size: 300%;color: dodgerblue;">Dashboard : Data Analyse</h1>
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item active">Dashboard </li>
                             </ol>
+
                         </div>
+
                         <!-- /.col -->
                     </div>
                     <!-- /.row -->
@@ -500,8 +492,159 @@
 
 
 
-
                     <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2>Travaux perturbants la circulation</h2>
+                                </div>
+                                <table>
+                                    <tr>
+                                        <td align="center">
+                                            <p></p>
+                                        </td>
+                                        <td align="center">
+
+                                        </td>
+                                        <td align="center">
+                                            <p></p>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p></p>
+                                        </td>
+                                        <td style="font-size: 125%;">
+                                            <div style="margin-left: 40px">
+                                                <p><b>Donnée contenant l'ensemble des chantiers perturbants de la Ville de Paris.&nbsp;</b></p>
+                                                <p>Donnée surfacique décrivant l'ensemble des chantiers perturbants de la ville de Paris.</p>
+                                                <p>Les chantiers perturbants sont définis comme « Les chantiers principaux ayant un impact sur la circulation »</p>
+                                                <p><strong>Attention la donnée n'est pas exhaustive et ne représente pas la totalité des chantiers à Paris.</strong></p>
+                                                <p>Les chantiers représentés répondent principalement aux critères suivants : </p>
+                                                <ul>
+                                                    <li>perturbent la circulation des voitures ou des vélos</li>
+                                                    <li>durent plus d'une semaine </li>
+                                                    <li>sont situés sur les voies principales, hors périphérique</li>
+                                                </ul>
+                                                <p>Les polygones sont créés et renseignés manuellement.</p>
+                                                <p>Initialisation de la donnée, Décembre 2016 - Mise à jour hebdomadaire.</p>
+                                                <p>Système de coordonnées : RGF 93 Lambert 93</p>
+                                                <p><a href="https://www.paris.fr/pages/travaux-trafic-fermetures-41" target="_blank"><b>Plus d'information sur Paris.fr</b></a></p>
+                                                <p>Description des codes :</p>
+                                                <table>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><strong>NIVEAU_PERTURBATION</strong></td>
+                                                            <td> <br></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Code</strong></td>
+                                                            <td><strong>Valeur</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Perturbant</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Très perturbant</td>
+                                                        </tr>
+                                                        <tr> </tr>
+                                                        <tr>
+                                                            <td><strong>NUMERO_STV</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Code</strong></td>
+                                                            <td><strong>Valeur</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>9</td>
+                                                            <td>Nord-Ouest</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>10</td>
+                                                            <td>Nord-Est</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>11</td>
+                                                            <td>Centre</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>12</td>
+                                                            <td>Sud</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>13</td>
+                                                            <td>Sud-Ouest</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>14</td>
+                                                            <td>Sud-Est</td>
+                                                        </tr>
+                                                        <tr> </tr>
+                                                        <tr>
+                                                            <td><strong>STATUT</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Code</strong></td>
+                                                            <td><strong>Valeur</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>A venir</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>En cours</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Suspendu</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4</td>
+                                                            <td>Prolongé</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5</td>
+                                                            <td>Terminé</td>
+                                                        </tr>
+                                                        <tr> </tr>
+                                                        <tr>
+                                                            <td><strong>TYPOLOGIE</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td><strong>Code</strong></td>
+                                                            <td><strong>Valeur</strong></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>Ville</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2</td>
+                                                            <td>Concessionnaire</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3</td>
+                                                            <td>Privé</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table><br></div>
+                                        </td>
+                                        <td align="center">
+
+                                        </td>
+                                    </tr>
+                                </table>
+                                <div class="card-footer">
+                                    <h5 class="card-title"></h5>
+                                </div>
+                            </div>
+                            <!-- /.card-footer -->
+                        </div>
                         <div class="col-md-6">
                             <div class="card">
                                 <div class="card-header">
@@ -883,7 +1026,6 @@
 
         <div class="card-header border-transparent">
 
-            <button class="btn"> <a href="{% url 'index' %}"> GO BACK</a></button>
             <div class="card-tools">
                 <button class="btn"> <a href="{% url 'index' %}"> GO BACK</a></button>
             </div>
