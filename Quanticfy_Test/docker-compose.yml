@@ -1,11 +1,20 @@
 version: "3"
-services:
-  web:
-    build: .
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/code
-    ports:
+services: 
+  app: 
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    
+    entrypoint: 
+      - ./wait.sh
+    ports: 
       - "8000:8000"
-    
-    
+  db: 
+    environment: 
+      MYSQL_ROOT_PASSWORD: root
+    image: "mysql:8.0.21"
+    ports: 
+      - "30000:3306"
+    volumes: 
+      - "./db:/docker-entrypoint-initdb.d/:ro"
+
